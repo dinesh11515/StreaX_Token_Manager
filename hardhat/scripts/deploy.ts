@@ -10,7 +10,9 @@ async function main() {
   await streaXNFT.deployed();
   console.log("StreaXNFT deployed to:", streaXNFT.address);
 
-  const StreaXManager = await hre.ethers.getContractFactory("StreaXManager");
+  const StreaXManager = await hre.ethers.getContractFactory(
+    "StreaXManagerWithoutOwner"
+  );
   const streaXManager = await StreaXManager.deploy(
     streaXToken.address,
     streaXNFT.address

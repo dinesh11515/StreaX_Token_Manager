@@ -55,6 +55,7 @@ export default function Form() {
       if (tokenType === "erc20") {
         const amount = (document.getElementById("amount") as HTMLInputElement)
           .value;
+        console.log(amount);
         const tx = await contract?.mintTokens(
           address,
           ethers.utils.parseEther(amount)
@@ -70,6 +71,7 @@ export default function Form() {
       setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -105,7 +107,7 @@ export default function Form() {
           <div className="mb-6">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="password"
+              htmlFor="amount"
             >
               Amount
             </label>
@@ -167,7 +169,7 @@ export default function Form() {
         )}
         <div className="flex flex-col items-center">
           {loading ? (
-            <img src="/loading.gif" width={25} height={25} />
+            <img src="/loading.gif" width={25} height={35} />
           ) : (
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

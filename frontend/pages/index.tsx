@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
 import Form from "../components/Form";
+import Transfer from "../components/Transfer";
 const Home: NextPage = () => {
   return (
     <div className="bg-[#FCFFE7] h-screen">
@@ -12,8 +13,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="flex justify-center ">
+      <div className="flex flex-col items-center lg:flex-row lg:justify-center gap-10 ">
         <Form />
+        <Transfer />
       </div>
     </div>
   );
